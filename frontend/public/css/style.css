@@ -1,0 +1,462 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+body {
+  font-family: Pretendard;
+  scrollbar-width: none;
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.stop-drag {
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.material-symbols-outlined {
+  color: #4a4a4a;
+}
+
+#map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.hidden-icon {
+  display: none !important;
+}
+
+.hidden {
+  height: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  overflow: hidden !important;
+}
+
+.background-blur-light {
+  background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  transition: 0.5s;
+}
+
+.background-blur-dark {
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  transition: 0.5s;
+}
+
+#lightSwitch {
+  display: none;
+}
+
+/* 검색바 */
+.search-container {
+  width: 340px;
+  height: 60px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+
+.search-input-light {
+  background-color: #fff;
+  color: black;
+  margin-left: 10px;
+  padding: 0px 20px;
+  width: 170px;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+}
+
+.search-input-light::placeholder {
+  color: #666;
+  transition: 0.5s;
+}
+
+.search-input-dark {
+  background-color: #333;
+  color: white;
+  margin-left: 10px;
+  padding: 0px 20px;
+  width: 170px;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+}
+
+.search-input-dark::placeholder {
+  color: #999;
+  transition: 0.5s;
+}
+
+.search-bar-container {
+  position: relative;
+}
+/* !검색바 */
+
+/*자치구별 상황 */
+#districts {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: calc(50% + 150px);
+  top: 125px;
+  max-width: 1440px;
+  width: calc(90% - 300px);
+  border-radius: 30px;
+}
+
+@media (max-width: 1150px) {
+  #districts {
+    display: none;
+  }
+}
+#districts ul {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-inline-start: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#districts li {
+  font-size: 16px;
+  font-weight: 600;
+  list-style-type: none;
+}
+
+#districts li::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px; /* Adds some space between the circle and the text */
+  border-radius: 50%; /* Makes the circle round */
+}
+/* 지역목록 */
+
+#districts li.gangnam::before {
+  background-color: green;
+}
+
+#districts li.gangdong::before {
+  background-color: green;
+}
+
+#districts li.gangbuk::before {
+  background-color: green;
+}
+
+#districts li.gangseo::before {
+  background-color: green;
+}
+
+#districts li.gwanak::before {
+  background-color: green;
+}
+
+#districts li.gwangjin::before {
+  background-color: green;
+}
+
+#districts li.guro::before {
+  background-color: green;
+}
+
+#districts li.geumcheon::before {
+  background-color: green;
+}
+
+#districts li.nowon::before {
+  background-color: green;
+}
+
+#districts li.dobong::before {
+  background-color: green;
+}
+
+#districts li.dongdaemun::before {
+  background-color: green;
+}
+
+#districts li.dongjak::before {
+  background-color: green;
+}
+
+#districts li.mapo::before {
+  background-color: green;
+}
+
+#districts li.seodaemun::before {
+  background-color: green;
+}
+
+#districts li.seocho::before {
+  background-color: green;
+}
+
+#districts li.seongdong::before {
+  background-color: green;
+}
+
+#districts li.seongbuk::before {
+  background-color: green;
+}
+
+#districts li.songpa::before {
+  background-color: green;
+}
+
+#districts li.yangcheon::before {
+  background-color: green;
+}
+
+#districts li.yeongdeungpo::before {
+  background-color: green;
+}
+
+#districts li.yongsan::before {
+  background-color: green;
+}
+
+#districts li.eunpyeong::before {
+  background-color: green;
+}
+
+#districts li.jongno::before {
+  background-color: green;
+}
+
+#districts li.junggu::before {
+  background-color: green;
+}
+
+#districts li.jungnang::before {
+  background-color: green;
+}
+
+/* !지역목록 */
+
+/* !자치구별 상황 */
+
+/* 사이드바 */
+.sidebar {
+  top: 0%;
+  left: 0%;
+  width: 300px;
+  height: 100%;
+  border-radius: 0px 30px 30px 0px;
+  position: absolute;
+}
+
+.sidebar ul {
+  list-style: none;
+  width: 240px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.sidebar li {
+  padding-left: 25px;
+}
+
+.sidebar a,
+.sidebar > label {
+  display: flex;
+  height: 60px;
+  width: 215px;
+  cursor: pointer;
+  color: #4a4a4a;
+  text-decoration: none;
+  margin: 20px 0px;
+  align-items: center;
+}
+
+.sidebar ul li:hover,
+.sidebar > label:hover {
+  backdrop-filter: brightness(75%);
+  -webkit-backdrop-filter: brightness(75%);
+  border-radius: 30px;
+  transition: 0.25s;
+}
+
+.sidebar ul li:active,
+.sidebar > label:active {
+  backdrop-filter: brightness(50%);
+  -webkit-backdrop-filter: brightness(50%);
+  border-radius: 30px;
+  transition: 0.25s;
+}
+
+.item {
+  line-height: 1.5;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0 0 0 10px; /* 아이콘과 텍스트 사이 여백 */
+}
+
+@media (max-width: 1150px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+.logo {
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 35px;
+}
+
+.copyright {
+  width: 250px;
+  height: 50px;
+  margin-left: 25px;
+  text-align: center;
+  bottom: 15px;
+  position: absolute;
+}
+/* !사이드바 */
+
+/* 카드 */
+.related-keywords {
+  width: 440px;
+  height: 580px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 40px 40px 0px 0px;
+}
+
+.related-keywords h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-section {
+  margin-top: 40px;
+}
+
+@media (max-width: 440px) {
+  .related-keywords {
+    width: 100%;
+  }
+
+  .card-section {
+    flex-direction: row;
+  }
+}
+
+.card-light {
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white !important;
+  width: 90%;
+  height: 160px;
+  border-radius: 15px;
+  transition: 0.5s;
+  overflow: hidden !important;
+}
+
+.card-dark {
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #333 !important;
+  color: #fff;
+  width: 90%;
+  height: 160px;
+  border-radius: 15px;
+  transition: 0.5s;
+  overflow: hidden !important;
+}
+
+.card-light.expanded {
+  max-height: 1000px;
+  overflow-y: auto; /* 세로 스크롤이 필요한 경우만 스크롤이 표시됩니다. */
+}
+
+.card-dark.expanded {
+  max-height: 1000px;
+  overflow-y: auto; /* 세로 스크롤이 필요한 경우만 스크롤이 표시됩니다. */
+}
+
+.card-header {
+  margin: 0px 20px 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.related-keywords .card .card-header h3 {
+  margin: 0;
+}
+
+.card-body {
+  margin-left: 20px;
+  margin-right: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.expanded:has(.card-body) .card-body{
+  -webkit-line-clamp: 23;
+}
+
+.expanded:has(.card-body) .card-body{
+  -webkit-line-clamp: 23;
+}
+
+.card-body p {
+  margin-block-start: unset;
+  margin-block-end: unset;
+}
+
+.more-button {
+  background-color: #01b574;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 10px;
+  width: 80px;
+  height: 30px;
+  border: none;
+}
+
+.more-button:hover {
+  filter: brightness(75%);
+  transition: 0.25s;
+}
+
+.more-button:active {
+  filter: brightness(50%);
+  transition: 0.25s;
+}
+
+/* !카드 */

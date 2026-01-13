@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seoul Shelter</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <!-- /CSS -->
+
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/cardextention.js"></script>
+    <!-- /Javascript -->
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- /favicon -->
+  </head>
+  <body>
+    <!-- 검색바 -->
+    <div class= "background-blur-light  search-container">
+      <div class="search-bar-container">
+        <input type="text" id="search-input" class="search-input-light" placeholder="대피소 검색" list="results">
+        <datalist id="results"></datalist>
+      </div>
+      <div class="stop-drag">
+        <input type="checkbox" id="lightSwitch">
+        <label for="lightSwitch" id="colormode-icon-light" class="material-symbols-outlined" style="line-height: unset;">&#xe51c;</label>
+        <label for="lightSwitch" id="colormode-icon-dark" class="material-symbols-outlined" style="line-height: unset;">&#xe518;</label>
+      </div>
+      <div class="material-symbols-outlined stop-drag">&#xe7f4;</div>
+      <div class="material-symbols-outlined stop-drag">&#xe88e;</div>
+    </div>
+    <!-- /검색바 -->
+
+    <!-- 자치구별 상황 -->
+    <div id="districts" class="background-blur-light stop-drag">
+      <ul>
+        <li class="gangnam">강남</li>
+        <li class="gangdong">강동</li>
+        <li class="gangbuk">강북</li>
+        <li class="gangseo">강서</li>
+        <li class="gwanak">관악</li>
+        <li class="gwangjin">광진</li>
+        <li class="guro">구로</li>
+        <li class="geumcheon">금천</li>
+        <li class="nowon">노원</li>
+        <li class="dobong">도봉</li>
+        <li class="dongdaemun">동대문</li>
+        <li class="dongjak">동작</li>
+        <li class="mapo">마포</li>
+        <li class="seodaemun">서대문</li>
+        <li class="seocho">서초</li>
+        <li class="seongdong">성동</li>
+        <li class="seongbuk">성북</li>
+        <li class="songpa">송파</li>
+        <li class="yangcheon">양천</li>
+        <li class="yeongdeungpo">영등포</li>
+        <li class="yongsan">용산</li>
+        <li class="eunpyeong">은평</li>
+        <li class="jongno">종로</li>
+        <li class="junggu">중구</li>
+        <li class="jungnang">중랑</li>
+      </ul>
+    </div>
+    <!-- /자치구별 상황 -->
+    
+    <!-- 사이드바 -->
+    <aside class="sidebar background-blur-light">
+      <div class="logo stop-drag" style="width: 240px;">
+        <img class="logo-svg" src="images/logo-white.svg" style="max-width: 100%; aspect-ratio: 58/29;"/>
+      </div>
+      <ul class="sidemenu stop-drag">
+        <li><a><span class="material-symbols-outlined">&#xf64f;</span><div class="item">지진</div></a></li>
+        <li><a><span class="material-symbols-outlined">&#xf176;</span><div class="item">침수위험/집중호우</div></a></li>
+        <li id="route-button"><a><span class="material-symbols-outlined">&#xe55d;</span><div class="item">길찾기</div></a></li>
+      </ul>
+      <h6 class="copyright stop-drag">
+        © 2024 Seoul Shelter<br>
+        All Rights Reserved.
+      </h6>
+    </aside>
+    <!-- /사이드바 -->
+
+    <!-- 카드 -->
+    <div class="related-keywords background-blur-light">
+      <div class="card-section">
+        <!-- 카드요소 -->
+        <div class="card-light">
+          <div class="card-header stop-drag">
+            <h3>현재 위치 주변의 대피소</h3>
+            <button class="more-button">더보기</button>
+          </div>
+          <div class="card-body">
+           <!-- <p>대피소 설명</p> -->
+          </div>
+        </div>
+        <!-- /카드요소 -->
+
+        <!-- 카드요소 -->
+        <div class="card-light">
+          <div class="card-header stop-drag">
+            <h3>재난 경보 현황</h3>
+            <button class="more-button">더보기</button>
+          </div>
+          <div class="card-body">
+            <p>경보 설명</p>
+          </div>
+        </div>
+        <!-- /카드요소 -->
+
+        <!-- 카드요소 -->
+        <div class="card-light" id="volunteer-card">
+          <div class="card-header stop-drag">
+            <h3>관련 봉사</h3>
+            <button class="more-button">더보기</button>
+          </div>
+          <div class="card-body">
+            <p>봉사 설명</p>
+          </div>
+        </div>
+        <!-- /카드요소 -->
+      </div>
+    </div>
+    <!-- /카드 -->
+
+    <div id="map"></div>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=3315682b2764a4f053ab788827c6b206&libraries=services,clusterer,drawing"></script>
+    <script type="module" src="js/map.js"></script>
+    <script src="js/sidebar-route.js"></script>
+    <script src="js/volunteerinf.js"></script>
+    <script src="js/shelterdata.js"></script>
+  </body>
+</html>
+
