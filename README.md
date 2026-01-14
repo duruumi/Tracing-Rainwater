@@ -26,7 +26,27 @@
 
 ## 스크린샷 및 상세 설명
 
-<img src="img/005.png" width="350">
+<img src="img/002.png" width="350">
 
 메인화면입니다.
 
+<img src="img/003.png" width="350">
+<img src="img/007.png" width="350">
+
+지역을 폴리곤으로 나누고 강수량에 따라 지역의 색이 변화합니다.
+
+<img src="img/009.png" width="350">
+각 지역의 대피소의 위치를 확인 할 수 있습니다.
+
+<img src="img/004.png" width="350">
+<img src="img/005.png" width="350">
+
+UI의 다크모드를 설정 할 수 있습니다.
+
+<img src="img/006.png" width="350">
+
+우측 상단의 영상을 통하여 대피 요령 영상을 시청 할 수 있습니다.
+
+<img src="img/008.png" width="350">
+
+광고를 통하여 수익을 얻을 수 있습니다.
