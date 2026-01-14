@@ -6,7 +6,7 @@
 ## 개발환경
 | 하드웨어 환경 | 소프트웨어 환경 |
 | --- | --- |
-| CPU : Ryzen 7 7800X3D <br><br>GPU : NVIDIA GeForce 4060TI 8GB <br>8Gbps(Memory Speed), Compute Capability 6.1 <br><br>Memory : 16GB, 2133MHz<br><br>저장장치 : HDD | Platform : Github pages <br><br> Heroku<br><br> Tailwind |
+| CPU : Ryzen 7 7800X3D <br><br>GPU : NVIDIA GeForce 4060TI 8GB <br>8Gbps(Memory Speed), Compute Capability 6.1 <br><br>Memory : 16GB, 2133MHz<br><br>저장장치 : HDD | Github pages <br><br> Heroku<br><br> Tailwind |
 
 
 ## IA
